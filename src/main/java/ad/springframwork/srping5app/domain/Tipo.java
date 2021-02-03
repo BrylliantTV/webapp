@@ -7,7 +7,7 @@ import java.util.Set;
 @Entity
 public class Tipo {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -47,6 +47,7 @@ public class Tipo {
         this.pokemons = pokemons;
     }
 
+    /*
     @Override
     public String toString() {
         return "Tipo{" +
@@ -55,4 +56,6 @@ public class Tipo {
                 ", pokemons=" + pokemons +
                 '}';
     }
+
+     */
 }

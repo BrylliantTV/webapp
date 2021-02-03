@@ -20,18 +20,19 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Pokemon charmander = new Pokemon("Charmander", 200);
-        Pokemon squirtle = new Pokemon("squirtle", 200);
-        Pokemon bulbasaur = new Pokemon("bulbasaur", 200);
         Ability fire = new Ability("FIRE", "QUEMA");
-        Ability waterPistol = new Ability("waterPistol", "MOJA");
-        Ability hojaAfilada = new Ability("hojaAfilada", "CORTA");
+        Pokemon squirtle = new Pokemon("squirtle", 200);
+        Ability water = new Ability("water", "moja");
 
         charmander.getAbilities().add(fire);
         fire.getPokemons().add(charmander);
-        squirtle.getAbilities().add(waterPistol);
-        waterPistol.getPokemons().add(squirtle);
-        bulbasaur.getAbilities().add(hojaAfilada);
-        hojaAfilada.getPokemons().add(bulbasaur);
+        squirtle.getAbilities().add(water);
+        water.getPokemons().add(squirtle);
+
+        pokemonRepository.save(charmander);
+        abilityRepository.save(fire);
+        pokemonRepository.save(squirtle);
+        abilityRepository.save(water);
 
         System.out.println("numero de pokemons: " + pokemonRepository.count());
         System.out.println("Habilidades totales: " + abilityRepository.count());

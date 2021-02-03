@@ -7,14 +7,14 @@ import java.util.Set;
 @Entity
 public class Ability {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
     private String effect;
 
-    @ManyToMany(mappedBy = "abilities")
+    @ManyToMany
     @JoinTable(name = "pokemon_ability",
             joinColumns = @JoinColumn (name = "id_ability"),
             inverseJoinColumns = @JoinColumn (name = "id_pokemon")
@@ -61,6 +61,7 @@ public class Ability {
         this.pokemons = pokemons;
     }
 
+    /*
     @Override
     public String toString() {
         return "Ability{" +
@@ -70,4 +71,6 @@ public class Ability {
                 ", pokemons=" + pokemons +
                 '}';
     }
+
+     */
 }
