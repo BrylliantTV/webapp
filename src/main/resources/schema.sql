@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS employee;
+
+CREATE TABLE employee(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(45) NOT NULL
+);
